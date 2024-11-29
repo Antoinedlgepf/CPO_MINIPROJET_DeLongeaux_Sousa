@@ -18,7 +18,7 @@ public class CPO_MiniProjet_DeLongeaux_Sousa {
     }
     
 }
-//on fait la classe Pion
+//on fait la banque de données pour les Pions
 //on construit des pions de couleur
 new Pion ('R') // R pour rouge
 new Pion ('B') // B bleu 
@@ -40,3 +40,4 @@ toString('j') // retourne une représentation textuelle de la couleur jaune
 toString('v') //retourne une représentation textuelle de la couleur verte
 toString('b') //retourne une représentation textuelle de la couleur blanc
 toString('n') //retourne une représentation textuelle de la couleur noire
+
