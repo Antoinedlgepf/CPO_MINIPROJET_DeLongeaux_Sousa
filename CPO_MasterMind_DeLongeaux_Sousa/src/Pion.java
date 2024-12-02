@@ -39,7 +39,7 @@ public class Pion
 
         // Tests des accesseurs et de l'affichage
         System.out.println("Couleur du pion rouge : " + pionRouge.getCouleur());
-        System.out.println("Représentation textuelle pion rouge : " + pionRouge); 
+        System.out.println("Représentation textuelle pion rougec  : " + pionRouge); 
 
         System.out.println("Couleur du pion bleu : " + pionBleu.getCouleur()); 
         System.out.println("Représentation textuelle pion bleu : " + pionBleu); 
