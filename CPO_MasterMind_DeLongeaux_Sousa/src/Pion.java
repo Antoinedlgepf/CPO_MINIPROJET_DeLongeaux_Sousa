@@ -35,7 +35,9 @@ public class Pion
         Pion pionNoir = new Pion('N');
         Pion pionJaune = new Pion('J');
         Pion pionBlanc = new Pion('W');
-       
+      
+        
+        
 
         // Tests des accesseurs et de l'affichage
         System.out.println("Couleur du pion rouge : " + pionRouge.getCouleur());
