@@ -59,7 +59,7 @@ public class TestCombinaison {
    
         
 
-        Combinaison combinaisonAleatoire = Combinaison.gendom(4, couleursDisponibles);
+        Combinaison combinaisonAleatoire = Combinaison.genererAleatoire(4, couleursDisponibles);
         System.out.println("Combinaison générée aléatoirement : " + combinaisonAleatoire);
 
         // Comparaison entre une combinaison statique et une aléatoire
