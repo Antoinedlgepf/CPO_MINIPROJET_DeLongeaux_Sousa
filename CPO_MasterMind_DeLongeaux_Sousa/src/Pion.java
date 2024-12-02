@@ -32,10 +32,10 @@ public class Pion
         Pion pionRouge = new Pion('R');
         Pion pionBleu = new Pion('B');
         Pion pionVert = new Pion('V');
-        Pion pion = new Pion('V');
-        Pion pionVert = new Pion('V');
-        Pion pionVert = new Pion('V');
-        Pion pionVert = new Pion('V');
+        Pion pionNoir = new Pion('N');
+        Pion pionJaune = new Pion('J');
+        Pion pionBlanc = new Pion('W');
+       
 
         // Tests des accesseurs et de l'affichage
         System.out.println("Couleur du pion rouge : " + pionRouge.getCouleur());
