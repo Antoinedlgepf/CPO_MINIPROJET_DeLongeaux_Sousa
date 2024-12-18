@@ -8,7 +8,7 @@ package mastermind_De_Longeaux_Sousa;
  *
  * @author souse
  */
-class Ligne {
+class Ligne_1 {
     Pion LigneAssociee[] = new Pion[4];
     
     public void placerPion(Pion p1, Pion p2, Pion p3, Pion p4) {
@@ -34,28 +34,28 @@ class Ligne {
             System.out.print(" ");
             switch (LigneAssociee[i].Couleur){
                     case "rouge" :
-                        System.out.print(ANSI_RED + "\u2022 " + ANSI_RESET);
+                        System.out.print(ANSI_RED + "\u2024 " + ANSI_RESET);
                         break;
                     case "jaune" :
-                        System.out.print(ANSI_YELLOW + "\u2022 " + ANSI_RESET);
+                        System.out.print(ANSI_YELLOW + "\u2024 " + ANSI_RESET);
                         break;
                     case "vert" :
-                        System.out.print(ANSI_GREEN + "\u2022 " + ANSI_RESET);
+                        System.out.print(ANSI_GREEN + "\u2024 " + ANSI_RESET);
                         break;
                     case "bleu" :
-                        System.out.print(ANSI_BLUE + "\u2022 " + ANSI_RESET);
+                        System.out.print(ANSI_BLUE + "\u2024 " + ANSI_RESET);
                         break;
                     case "blanc" :
-                        System.out.print(ANSI_WHITE + "\u2022 " + ANSI_RESET);
+                        System.out.print(ANSI_WHITE + "\u2024 " + ANSI_RESET);
                         break;
                     case "violet" :
-                        System.out.print(ANSI_PURPLE + "\u2022 " + ANSI_RESET);
+                        System.out.print(ANSI_PURPLE + "\u2024 " + ANSI_RESET);
                         break;
                     case "rose" :
-                        System.out.print(ANSI_PINK + "\u2022 " + ANSI_RESET);
+                        System.out.print(ANSI_PINK + "\u2024 " + ANSI_RESET);
                         break;
                     case "orange" :
-                        System.out.print(ANSI_BLACK + "\u2022 " + ANSI_RESET);
+                        System.out.print(ANSI_BLACK + "\u2024 " + ANSI_RESET);
                         break;
     }
         }

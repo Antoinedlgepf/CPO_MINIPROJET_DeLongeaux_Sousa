@@ -7,18 +7,19 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+
 /**
  *
  * @author souse
  */
-class Partie {
-    Ligne ligneTest; 
-    Ligne ligneGagnante;
+class Partie_1 {
+    Ligne_1 ligneTest; 
+    Ligne_1 ligneGagnante;
     int nbEssais; //compte le nombre de tests effectués 
     
-    public Partie() {
-        ligneGagnante = new Ligne();
-        ligneTest = new Ligne();
+    public Partie_1() {
+        ligneGagnante = new Ligne_1();
+        ligneTest = new Ligne_1();
         nbEssais = 0;
     }
     
@@ -46,13 +47,13 @@ class Partie {
             nbEssais = nbEssais + 1;
             ligneTest.afficherLigne();
             int tab [] = nbJuste();
-            System.out.println("Vous avez placé "+tab[0]+" pions correctement.");
+            System.out.println("Vous avez place "+tab[0]+" pions correctement.");
             System.out.println("Vous avez mal placé "+tab[1]+" pions.");
             testGagnant = etreGagnante();
             if (nbEssais == 12) break;
         } while (testGagnant == false);
         if (nbEssais < 12) {
-            System.out.println("BRAVO ! Vous avez gagné en moins de 12 coups !!");
+            System.out.println("BRAVO ! Vous avez gagne en moins de 12 coups !!");
         }
         else if (etreGagnante() == true) {
             System.out.println("Vous avez eu chaud... Vous avez gagné lors de votre dernier coup possible !");

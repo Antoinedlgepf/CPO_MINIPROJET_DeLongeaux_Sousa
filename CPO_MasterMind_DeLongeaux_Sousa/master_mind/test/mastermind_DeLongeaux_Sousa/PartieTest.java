@@ -37,12 +37,12 @@ public class PartieTest {
     }
 
     /**
-     * Test of initialiserPartie method, of class Partie.
+     * Test of initialiserPartie method, of class Partie_1.
      */
     @Test
     public void testInitialiserPartie() {
         System.out.println("initialiserPartie");
-        Partie instance = new Partie();
+        Partie_1 instance = new Partie_1();
         instance.initialiserPartie();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -80,19 +80,19 @@ public class PartieTest {
     @Test
     public void testNouveauTest() {
         System.out.println("nouveauTest");
-        Partie instance = new Partie();
+        Partie_1 instance = new Partie_1();
         instance.nouveauTest();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of nbJuste method, of class Partie.
+     * Test of nbJuste method, of class Partie_1.
      */
     @Test
     public void testNbJuste() {
         System.out.println("nbJuste");
-        Partie instance = new Partie();
+        Partie_1 instance = new Partie_1();
         int[] expResult = null;
         int[] result = instance.nbJuste();
         assertArrayEquals(expResult, result);
