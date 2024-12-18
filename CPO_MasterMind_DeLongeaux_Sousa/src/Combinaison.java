@@ -8,66 +8,70 @@
  * @author caill
  */
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Combinaison {
+    private Pion[] elements; // Tableau de pions
 
-    private static Combinaison genererAleatoire(int i, ArrayList<Character> couleursDisponibles) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    // Constructeur
+    public Combinaison(Pion[] elements) {
+        this.elements = elements;
     }
 
-    private Combinaison(Pion[] pions1) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    // Génération aléatoire d'une combinaison
+    public static Combinaison genererAleatoire(int taille, ArrayList<Character> couleursDisponibles) {
+        Pion[] elements = new Pion[taille];
+        Random random = new Random();
+
+        for (int i = 0; i < taille; i++) {
+            char couleur = couleursDisponibles.get(random.nextInt(couleursDisponibles.size()));
+            elements[i] = new Pion(couleur);
+        }
+        return new Combinaison(elements);
     }
 
-    private int[] comparer(Combinaison comb2) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    // Comparaison avec une autre combinaison
+    public int[] comparer(Combinaison autre) {
+        int noirs = 0; // Bien placés
+        int blancs = 0; // Mal placés
+
+        boolean[] utiliseSecrete = new boolean[elements.length];
+        boolean[] utiliseProposee = new boolean[elements.length];
+
+        // Étape 1 : Trouver les bien placés
+        for (int i = 0; i < elements.length; i++) {
+            if (elements[i].getCouleur() == autre.elements[i].getCouleur()) {
+                noirs++;
+                utiliseSecrete[i] = true;
+                utiliseProposee[i] = true;
+            }
+        }
+
+        // Étape 2 : Trouver les mal placés
+        for (int i = 0; i < elements.length; i++) {
+            if (!utiliseProposee[i]) {
+                for (int j = 0; j < elements.length; j++) {
+                    if (!utiliseSecrete[j] && elements[j].getCouleur() == autre.elements[i].getCouleur()) {
+                        blancs++;
+                        utiliseSecrete[j] = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return new int[]{noirs, blancs};
     }
-    
 
-public class TestCombinaison {
-    public static void main(String[] args) {
-        // Création de combinaisons statiques
-        Pion[] pions1 = {new Pion('R'), new Pion('B'), new Pion('G'), new Pion('J'), new Pion('W'),  new Pion('N')};
-        Pion[] pions2 = {new Pion('R'), new Pion('G'), new Pion('B'), new Pion('J'), new Pion('W'),  new Pion('N')};
-        Pion[] pions3 = {new Pion('R'), new Pion('B'), new Pion('G'), new Pion('J'), new Pion('W'),  new Pion('N')};
-        Pion[] pions4 = {new Pion('R'), new Pion('B'), new Pion('G'), new Pion('J'), new Pion('W'),  new Pion('N')};
-
-        Combinaison comb1 = new Combinaison(pions1);
-        Combinaison comb2 = new Combinaison(pions2);
-        Combinaison comb3 = new Combinaison(pions3);
-        Combinaison comb4 = new Combinaison(pions4);
-        
-                
-
-        System.out.println("Combinaison 1 : " + comb1);
-        System.out.println("Combinaison 2 : " + comb2);
-        System.out.println("Combinaison 3 : " + comb3);
-        System.out.println("Combinaison 4 : " + comb4);
-
-        // Test de comparaison
-        int[] resultats = comb1.comparer(comb2);
-        System.out.println("Indices (noirs, blancs) : " + resultats[0] + ", " + resultats[1]);
-
-        // Génération d'une combinaison aléatoire
-        ArrayList<Character> couleursDisponibles = new ArrayList<>();
-        couleursDisponibles.add('R'); // Rouge
-        couleursDisponibles.add('B'); // Bleu
-        couleursDisponibles.add('G'); // Vert
-        couleursDisponibles.add('Y'); // Jaune
-        couleursDisponibles.add('N'); // Noir
-        couleursDisponibles.add('W'); // Blanc
-   
-        
-
-        Combinaison combinaisonAleatoire = Combinaison.genererAleatoire(4, couleursDisponibles);
-        System.out.println("Combinaison générée aléatoirement : " + combinaisonAleatoire);
-
-        // Comparaison entre une combinaison statique et une aléatoire
-        resultats = comb1.comparer(combinaisonAleatoire);
-        System.out.println("Indices (noirs, blancs) avec combinaison aléatoire : " +
-                resultats[0] + ", " + resultats[1]);
+    // Représentation textuelle de la combinaison
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Pion pion : elements) {
+            sb.append(pion.toString());
+        }
+        return sb.toString();
     }
 }
-    
-}
+
 

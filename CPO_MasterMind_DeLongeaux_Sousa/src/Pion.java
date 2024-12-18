@@ -1,48 +1,31 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
+
 
 /**
  *
- * @author caill
+ * @author souse
  */
-public class Pion 
-{
-    
-    private char couleur;
+public class Pion {
+    private char couleur; // Représente la couleur du pion
 
+    // Constructeur
     public Pion(char couleur) {
         this.couleur = couleur;
     }
 
+    // Getter pour la couleur
     public char getCouleur() {
         return couleur;
     }
 
-    
+    // Représentation textuelle du pion
     @Override
     public String toString() {
-        return Character.toString(couleur);
+        return String.valueOf(couleur);
     }
+}  
+      
 
-    
-    public static void main(String[] args) {
-        // Création de différents pions
-        Pion pionRouge = new Pion('R');
-        Pion pionBleu = new Pion('B');
-        Pion pionVert = new Pion('V');
-        Pion pionNoir = new Pion('N');
-        Pion pionJaune = new Pion('J');
-        Pion pionBlanc = new Pion('W');
-       
-
-        // Tests des accesseurs et de l'affichage
-        System.out.println("Couleur du pion rouge : " + pionRouge.getCouleur());
-        System.out.println("Représentation textuelle pion rougec  : " + pionRouge); 
-
-        System.out.println("Couleur du pion bleu : " + pionBleu.getCouleur()); 
-        System.out.println("Représentation textuelle pion bleu : " + pionBleu); 
-    }
-
-}
